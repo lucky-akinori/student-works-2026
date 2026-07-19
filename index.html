@@ -7,6 +7,16 @@
   <title>令和8年度 Webサイト作品集</title>
 
   <style>
+    :root {
+      --navy: #123f68;
+      --blue: #2f6f9f;
+      --light-blue: #eaf2f8;
+      --border: #c8d9e6;
+      --text: #25384a;
+      --subtext: #647789;
+      --white: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -14,9 +24,9 @@
     body {
       margin: 0;
       min-height: 100vh;
-      color: #25324a;
+      color: var(--text);
       background:
-        linear-gradient(135deg, #edf5ff 0%, #f8fbff 50%, #eef8f5 100%);
+        linear-gradient(135deg, #eef4f8 0%, #f8fafc 55%, #edf3f6 100%);
       font-family:
         "Yu Gothic",
         "Hiragino Kaku Gothic ProN",
@@ -24,76 +34,126 @@
         sans-serif;
     }
 
-    header {
-      padding: 55px 20px 90px;
-      color: #ffffff;
+    .hero {
+      padding: 52px 20px 105px;
+      color: var(--white);
       text-align: center;
       background:
-        linear-gradient(135deg, #073b6f, #176ba9);
+        linear-gradient(135deg, #123b60 0%, #286892 100%);
     }
 
-    header h1 {
-      margin: 0 0 14px;
-      font-size: clamp(32px, 5vw, 52px);
-      letter-spacing: 0.08em;
+    .hero-inner {
+      width: min(1100px, 100%);
+      margin: 0 auto;
     }
 
-    header p {
+    .school-name {
+      display: inline-block;
+      margin: 0 0 20px;
+      padding: 8px 18px;
+      font-size: clamp(14px, 2vw, 17px);
+      letter-spacing: 0.05em;
+      background-color: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+    }
+
+    .hero h1 {
       margin: 0;
-      font-size: 18px;
-      letter-spacing: 0.06em;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.2;
+      letter-spacing: 0.07em;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.42em;
+      font-weight: normal;
+      letter-spacing: 0.14em;
       opacity: 0.9;
     }
 
-    main {
-      width: min(1200px, calc(100% - 32px));
-      margin: -52px auto 50px;
-      padding: 42px;
-      background-color: rgba(255, 255, 255, 0.96);
-      border-radius: 22px;
-      box-shadow: 0 16px 42px rgba(20, 58, 95, 0.16);
+    .subject {
+      margin: 20px 0 0;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: bold;
+      letter-spacing: 0.12em;
     }
 
-    .introduction {
-      margin-bottom: 34px;
+    main {
+      width: min(1240px, calc(100% - 32px));
+      margin: -62px auto 50px;
+      padding: 44px;
+      background-color: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(31, 67, 94, 0.18);
+    }
+
+    .intro {
+      margin-bottom: 36px;
       text-align: center;
     }
 
-    .introduction h2 {
-      margin: 0 0 10px;
-      color: #063b6f;
-      font-size: 30px;
+    .intro-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      background-color: var(--light-blue);
+      border-radius: 999px;
+    }
+
+    .intro h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 38px);
       letter-spacing: 0.05em;
     }
 
-    .introduction p {
+    .intro h2::after {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--blue);
+      border-radius: 999px;
+    }
+
+    .intro p {
       margin: 0;
-      color: #667085;
-      font-size: 17px;
-      line-height: 1.8;
+      color: var(--subtext);
+      font-size: 16px;
+      line-height: 1.9;
     }
 
     .works {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 18px;
     }
 
     .works a {
       display: flex;
-      min-height: 110px;
+      min-height: 108px;
       align-items: center;
       justify-content: center;
-      color: #064b85;
-      font-size: 23px;
+      color: #174f79;
+      font-size: 22px;
       font-weight: bold;
       letter-spacing: 0.04em;
       text-decoration: none;
       background:
-        linear-gradient(145deg, #ffffff, #f1f7fd);
-      border: 1px solid #d4e3f0;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(22, 73, 115, 0.09);
+        linear-gradient(145deg, #ffffff 0%, #eef5fa 100%);
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--blue);
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(34, 77, 108, 0.1);
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -102,46 +162,63 @@
     }
 
     .works a:hover {
-      color: #ffffff;
+      color: var(--white);
       background:
-        linear-gradient(135deg, #0c5795, #1683ba);
-      box-shadow: 0 11px 24px rgba(16, 88, 145, 0.26);
+        linear-gradient(135deg, #245f8b, #367dab);
+      box-shadow: 0 11px 23px rgba(30, 82, 120, 0.24);
       transform: translateY(-5px);
     }
 
     .works a:focus-visible {
-      outline: 4px solid rgba(22, 131, 186, 0.35);
-      outline-offset: 3px;
+      outline: 4px solid rgba(47, 111, 159, 0.3);
+      outline-offset: 4px;
     }
 
     footer {
-      padding: 0 20px 35px;
-      color: #64748b;
+      padding: 0 20px 36px;
+      color: #607384;
       text-align: center;
       font-size: 14px;
+      line-height: 1.8;
     }
 
-    @media (max-width: 700px) {
-      header {
-        padding: 40px 16px 72px;
+    footer strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 1100px) {
+      .works {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 850px) {
+      main {
+        padding: 34px 26px;
       }
 
-      header p {
-        font-size: 15px;
+      .works {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding: 40px 16px 88px;
+      }
+
+      .school-name {
+        font-size: 13px;
       }
 
       main {
-        width: min(100% - 20px, 1200px);
-        margin-top: -38px;
-        padding: 28px 18px;
-        border-radius: 16px;
+        width: calc(100% - 20px);
+        margin-top: -44px;
+        padding: 28px 16px;
+        border-radius: 18px;
       }
 
-      .introduction h2 {
-        font-size: 24px;
-      }
-
-      .introduction p {
+      .intro p {
         font-size: 15px;
       }
 
@@ -151,13 +228,14 @@
       }
 
       .works a {
-        min-height: 82px;
+        min-height: 84px;
         font-size: 18px;
+        border-top-width: 4px;
         border-radius: 12px;
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 380px) {
       .works {
         grid-template-columns: 1fr;
       }
@@ -167,16 +245,30 @@
 
 <body>
 
-  <header>
-    <h1>Webサイト作品集</h1>
-    <p>令和8年度　生徒作品ギャラリー</p>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="school-name">
+        ＮＳＧ
+      </p>
+
+      <h1>
+        <span>令和8年度</span>
+        Webサイト作品集
+      </h1>
+
+      <p class="subject">ネットワーク活用</p>
+    </div>
   </header>
 
   <main>
-    <section class="introduction">
+    <section class="intro">
+      <span class="intro-label">STUDENT WEB GALLERY</span>
+
       <h2>作品を選んでください</h2>
+
       <p>
-        それぞれのボタンから、生徒が制作したWebサイトをご覧いただけます。
+        生徒一人ひとりが制作したWebサイトを公開しています。<br>
+        各ボタンをクリックして、作品をご覧ください。
       </p>
     </section>
 
@@ -186,31 +278,36 @@
       <a href="03/">作品03</a>
       <a href="04/">作品04</a>
       <a href="05/">作品05</a>
+
       <a href="06/">作品06</a>
       <a href="07/">作品07</a>
       <a href="08/">作品08</a>
       <a href="09/">作品09</a>
       <a href="10/">作品10</a>
+
       <a href="11/">作品11</a>
       <a href="12/">作品12</a>
       <a href="13/">作品13</a>
       <a href="14/">作品14</a>
       <a href="15/">作品15</a>
+
       <a href="16/">作品16</a>
       <a href="17/">作品17</a>
       <a href="18/">作品18</a>
       <a href="19/">作品19</a>
       <a href="20/">作品20</a>
+
       <a href="21/">作品21</a>
       <a href="22/">作品22</a>
       <a href="23/">作品23</a>
       <a href="24/">作品24</a>
-      <a href="25/">TSUCHIDA</a>
+      <a href="25/">作品25</a>
     </nav>
   </main>
 
   <footer>
-    © 2026 Webサイト作品集
+    <strong>ＮＳＧ</strong><br>
+    令和8年度　ネットワーク活用
   </footer>
 
 </body>
