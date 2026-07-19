@@ -1,97 +1,200 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>令和8年度 Webサイト作品集</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 40px;
-            background: #f5f5f5;
-        }
+  <title>令和8年度 Webサイト作品集</title>
 
-        h1 {
-            color: #003366;
-            border-bottom: 3px solid #003366;
-            padding-bottom: 10px;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        p {
-            font-size: 18px;
-        }
+    body {
+      margin: 0;
+      font-family:
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        Meiryo,
+        sans-serif;
+      color: #25324a;
+      background:
+        linear-gradient(135deg, #edf5ff 0%, #f8fbff 50%, #eef8f5 100%);
+      min-height: 100vh;
+    }
 
-        ul {
-            display: grid;
-            grid-template-columns: repeat(4, 140px);
-            gap: 14px;
-            list-style: none;
-            padding: 0;
-        }
+    header {
+      padding: 55px 20px 85px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #063b6f, #1766a6);
+    }
 
-        a {
-            display: block;
-            padding: 14px 10px;
-            text-align: center;
-            text-decoration: none;
-            background: #ffffff;
-            border: 1px solid #cccccc;
-            border-radius: 6px;
-            color: #003366;
-            font-size: 18px;
-        }
+    header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 5vw, 50px);
+      letter-spacing: 0.08em;
+    }
 
-        a:hover {
-            background: #003366;
-            color: #ffffff;
-        }
+    header p {
+      margin: 0;
+      font-size: 17px;
+      opacity: 0.9;
+    }
 
-        @media screen and (max-width: 700px) {
-            body {
-                margin: 20px;
-            }
+    main {
+      width: min(1100px, calc(100% - 32px));
+      margin: -48px auto 50px;
+      padding: 38px;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(20, 58, 95, 0.16);
+    }
 
-            ul {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    .introduction {
+      margin: 0 0 30px;
+      text-align: center;
+    }
+
+    .introduction h2 {
+      margin: 0 0 8px;
+      color: #063b6f;
+      font-size: 25px;
+    }
+
+    .introduction p {
+      margin: 0;
+      color: #667085;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 18px;
+    }
+
+    .works a {
+      display: flex;
+      min-height: 92px;
+      align-items: center;
+      justify-content: center;
+      color: #064b85;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      background:
+        linear-gradient(145deg, #ffffff, #f1f7fd);
+      border: 1px solid #d5e4f1;
+      border-radius: 14px;
+      box-shadow: 0 5px 14px rgba(22, 73, 115, 0.08);
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        color 0.2s,
+        background 0.2s;
+    }
+
+    .works a:hover {
+      color: white;
+      background:
+        linear-gradient(135deg, #0c5795, #1683ba);
+      box-shadow: 0 10px 22px rgba(16, 88, 145, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .number {
+      margin-right: 10px;
+      color: #7698b5;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .works a:hover .number {
+      color: #dcefff;
+    }
+
+    footer {
+      padding: 0 20px 35px;
+      color: #64748b;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 38px;
+        padding-bottom: 70px;
+      }
+
+      main {
+        margin-top: -38px;
+        padding: 25px 18px;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .works a {
+        min-height: 74px;
+        font-size: 17px;
+      }
+
+      .number {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>令和8年度 Webサイト作品集</h1>
+  <header>
+    <h1>Webサイト作品集</h1>
+    <p>令和8年度　生徒作品ギャラリー</p>
+  </header>
 
-    <p>作品を選んでください。</p>
+  <main>
+    <section class="introduction">
+      <h2>作品を選んでください</h2>
+      <p>それぞれのボタンから、生徒が制作したWebサイトをご覧いただけます。</p>
+    </section>
 
-    <ul>
-        <li><a href="01/">作品01</a></li>
-        <li><a href="02/">作品02</a></li>
-        <li><a href="03/">作品03</a></li>
-        <li><a href="04/">作品04</a></li>
-        <li><a href="05/">作品05</a></li>
-        <li><a href="06/">作品06</a></li>
-        <li><a href="07/">作品07</a></li>
-        <li><a href="08/">作品08</a></li>
-        <li><a href="09/">作品09</a></li>
-        <li><a href="10/">作品10</a></li>
-        <li><a href="11/">作品11</a></li>
-        <li><a href="12/">作品12</a></li>
-        <li><a href="13/">作品13</a></li>
-        <li><a href="14/">作品14</a></li>
-        <li><a href="15/">作品15</a></li>
-        <li><a href="16/">作品16</a></li>
-        <li><a href="17/">作品17</a></li>
-        <li><a href="18/">作品18</a></li>
-        <li><a href="19/">作品19</a></li>
-        <li><a href="20/">作品20</a></li>
-        <li><a href="21/">作品21</a></li>
-        <li><a href="22/">作品22</a></li>
-        <li><a href="23/">作品23</a></li>
-        <li><a href="24/">作品24</a></li>
-        <li><a href="25/">作品25</a></li>
-    </ul>
+    <nav class="works">
+      <a href="01/"><span class="number">01</span>作品01</a>
+      <a href="02/"><span class="number">02</span>作品02</a>
+      <a href="03/"><span class="number">03</span>作品03</a>
+      <a href="04/"><span class="number">04</span>作品04</a>
+      <a href="05/"><span class="number">05</span>作品05</a>
+      <a href="06/"><span class="number">06</span>作品06</a>
+      <a href="07/"><span class="number">07</span>作品07</a>
+      <a href="08/"><span class="number">08</span>作品08</a>
+      <a href="09/"><span class="number">09</span>作品09</a>
+      <a href="10/"><span class="number">10</span>作品10</a>
+      <a href="11/"><span class="number">11</span>作品11</a>
+      <a href="12/"><span class="number">12</span>作品12</a>
+      <a href="13/"><span class="number">13</span>作品13</a>
+      <a href="14/"><span class="number">14</span>作品14</a>
+      <a href="15/"><span class="number">15</span>作品15</a>
+      <a href="16/"><span class="number">16</span>作品16</a>
+      <a href="17/"><span class="number">17</span>作品17</a>
+      <a href="18/"><span class="number">18</span>作品18</a>
+      <a href="19/"><span class="number">19</span>作品19</a>
+      <a href="20/"><span class="number">20</span>作品20</a>
+      <a href="21/"><span class="number">21</span>作品21</a>
+      <a href="22/"><span class="number">22</span>作品22</a>
+      <a href="23/"><span class="number">23</span>作品23</a>
+      <a href="24/"><span class="number">24</span>作品24</a>
+      <a href="25/"><span class="number">25</span>作品25</a>
+    </nav>
+  </main>
+
+  <footer>
+    © 2026 Webサイト作品集
+  </footer>
 
 </body>
 </html>
