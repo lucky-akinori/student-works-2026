@@ -2,15 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>令和8年度 Webサイト作品集</title>
 
   <style>
     :root {
       --navy: #123f68;
+      --deep-blue: #164f7c;
       --blue: #2f6f9f;
       --light-blue: #eaf2f8;
+      --pale-blue: #f3f7fa;
       --border: #c8d9e6;
       --text: #25384a;
       --subtext: #647789;
@@ -21,12 +27,23 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       color: var(--text);
+
       background:
-        linear-gradient(135deg, #eef4f8 0%, #f8fafc 55%, #edf3f6 100%);
+        linear-gradient(
+          135deg,
+          #e8f1f7 0%,
+          #f8fafc 52%,
+          #edf3f6 100%
+        );
+
       font-family:
         "Yu Gothic",
         "Hiragino Kaku Gothic ProN",
@@ -34,210 +51,536 @@
         sans-serif;
     }
 
+    /*
+      ヘッダー
+    */
+
     .hero {
-      padding: 52px 20px 105px;
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        55px
+        20px
+        112px;
+
       color: var(--white);
       text-align: center;
+
       background:
-        linear-gradient(135deg, #123b60 0%, #286892 100%);
+        linear-gradient(
+          135deg,
+          #123b60 0%,
+          #205b87 55%,
+          #347da8 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      top: -150px;
+      right: -100px;
+
+      width: 370px;
+      height: 370px;
+
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      bottom: -215px;
+      left: -115px;
+
+      width: 440px;
+      height: 440px;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 50%;
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
+
       width: min(1100px, 100%);
       margin: 0 auto;
     }
 
-    .school-name {
-      display: inline-block;
-      margin: 0 0 20px;
-      padding: 8px 18px;
-      font-size: clamp(14px, 2vw, 17px);
-      letter-spacing: 0.05em;
-      background-color: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
+    .year {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+
+      margin: 0 0 14px;
+
+      color: #e6edf3;
+
+      font-size: clamp(17px, 2.5vw, 23px);
+      font-weight: bold;
+      letter-spacing: 0.15em;
+    }
+
+    .year::before,
+    .year::after {
+      content: "";
+
+      width: 70px;
+      height: 1px;
+
+      background-color: rgba(255, 255, 255, 0.55);
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.2;
-      letter-spacing: 0.07em;
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
-    }
 
-    .hero h1 span {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.42em;
-      font-weight: normal;
-      letter-spacing: 0.14em;
-      opacity: 0.9;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.18;
+      letter-spacing: 0.07em;
+
+      text-shadow:
+        0 4px 13px rgba(0, 0, 0, 0.2);
     }
 
     .subject {
-      margin: 20px 0 0;
-      font-size: clamp(18px, 3vw, 26px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+
+      margin: 22px 0 0;
+
+      font-size: clamp(18px, 3vw, 27px);
       font-weight: bold;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
     }
+
+    .subject::before,
+    .subject::after {
+      content: "";
+
+      width: 54px;
+      height: 1px;
+
+      background-color: rgba(255, 255, 255, 0.55);
+    }
+
+    /*
+      メイン部分
+    */
 
     main {
+      position: relative;
+      z-index: 2;
+
       width: min(1240px, calc(100% - 32px));
-      margin: -62px auto 50px;
-      padding: 44px;
-      background-color: rgba(255, 255, 255, 0.97);
+
+      margin:
+        -65px
+        auto
+        58px;
+
+      padding:
+        46px
+        44px
+        50px;
+
+      background-color: rgba(255, 255, 255, 0.98);
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: 24px;
-      box-shadow: 0 16px 40px rgba(31, 67, 94, 0.18);
+
+      box-shadow:
+        0 18px 44px rgba(31, 67, 94, 0.18);
     }
 
+    /*
+      紹介部分
+    */
+
     .intro {
-      margin-bottom: 36px;
+      margin-bottom: 38px;
       text-align: center;
     }
 
     .intro-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 14px;
-      color: var(--navy);
-      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+
+      margin-bottom: 14px;
+
+      color: var(--blue);
+
+      font-size: 14px;
       font-weight: bold;
-      letter-spacing: 0.08em;
-      background-color: var(--light-blue);
-      border-radius: 999px;
+      letter-spacing: 0.16em;
+    }
+
+    .intro-label::before,
+    .intro-label::after {
+      content: "";
+
+      width: 54px;
+      height: 1px;
+
+      background-color: #8cb0cc;
     }
 
     .intro h2 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
+
       color: var(--navy);
-      font-size: clamp(28px, 4vw, 38px);
+
+      font-size: clamp(29px, 4vw, 40px);
       letter-spacing: 0.05em;
     }
 
     .intro h2::after {
       content: "";
+
       display: block;
-      width: 78px;
+
+      width: 74px;
       height: 4px;
-      margin: 14px auto 0;
+
+      margin: 15px auto 0;
+
       background-color: var(--blue);
       border-radius: 999px;
     }
 
     .intro p {
       margin: 0;
+
       color: var(--subtext);
+
       font-size: 16px;
       line-height: 1.9;
     }
 
+    /*
+      作品一覧
+    */
+
     .works {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
       gap: 18px;
     }
 
     .works a {
+      position: relative;
+
       display: flex;
-      min-height: 108px;
       align-items: center;
       justify-content: center;
+
+      min-height: 104px;
+
+      overflow: hidden;
+
       color: #174f79;
+
       font-size: 22px;
       font-weight: bold;
       letter-spacing: 0.04em;
+
       text-decoration: none;
+
       background:
-        linear-gradient(145deg, #ffffff 0%, #eef5fa 100%);
+        linear-gradient(
+          145deg,
+          #ffffff 0%,
+          #eef5fa 100%
+        );
+
       border: 1px solid var(--border);
       border-top: 5px solid var(--blue);
       border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(34, 77, 108, 0.1);
+
+      box-shadow:
+        0 6px 16px rgba(34, 77, 108, 0.1);
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         color 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .works a::after {
+      content: "›";
+
+      position: absolute;
+      right: 17px;
+
+      color: #5b8eb5;
+
+      font-size: 30px;
+      font-weight: normal;
+
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .works a:hover {
       color: var(--white);
+
       background:
-        linear-gradient(135deg, #245f8b, #367dab);
-      box-shadow: 0 11px 23px rgba(30, 82, 120, 0.24);
+        linear-gradient(
+          135deg,
+          #245f8b,
+          #367dab
+        );
+
+      border-color: #367dab;
+
+      box-shadow:
+        0 12px 24px rgba(30, 82, 120, 0.24);
+
       transform: translateY(-5px);
     }
 
+    .works a:hover::after {
+      color: var(--white);
+      transform: translateX(3px);
+    }
+
     .works a:focus-visible {
-      outline: 4px solid rgba(47, 111, 159, 0.3);
+      outline:
+        4px solid
+        rgba(47, 111, 159, 0.3);
+
       outline-offset: 4px;
     }
 
+    /*
+      フッター
+    */
+
     footer {
-      padding: 0 20px 36px;
-      color: #607384;
+      padding:
+        28px
+        20px
+        30px;
+
+      color: #687887;
       text-align: center;
-      font-size: 14px;
-      line-height: 1.8;
+
+      background-color: #eef2f5;
+      border-top: 1px solid #d5dee5;
     }
 
-    footer strong {
-      color: var(--navy);
+    .footer-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+
+      margin: 0;
+
+      color: #435f75;
+
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0.07em;
     }
 
-    @media (max-width: 1100px) {
+    .footer-title::before,
+    .footer-title::after {
+      content: "";
+
+      width: 45px;
+      height: 1px;
+
+      background-color: #a7b7c4;
+    }
+
+    .copyright {
+      margin: 10px 0 0;
+
+      color: #89959f;
+
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+
+    /*
+      画面幅が1000px以下の場合
+    */
+
+    @media (max-width: 1000px) {
       .works {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 850px) {
-      main {
-        padding: 34px 26px;
-      }
+    /*
+      画面幅が760px以下の場合
+    */
 
-      .works {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 620px) {
+    @media (max-width: 760px) {
       .hero {
-        padding: 40px 16px 88px;
+        padding:
+          45px
+          16px
+          96px;
       }
 
-      .school-name {
-        font-size: 13px;
+      main {
+        padding:
+          36px
+          26px
+          40px;
+      }
+
+      .works {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+      }
+    }
+
+    /*
+      スマートフォン表示
+    */
+
+    @media (max-width: 560px) {
+      .hero {
+        padding:
+          38px
+          14px
+          82px;
+      }
+
+      .year {
+        gap: 10px;
+        font-size: 15px;
+      }
+
+      .year::before,
+      .year::after {
+        width: 34px;
+      }
+
+      .hero h1 {
+        font-size: clamp(35px, 11vw, 50px);
+      }
+
+      .subject {
+        gap: 10px;
+        font-size: 18px;
+      }
+
+      .subject::before,
+      .subject::after {
+        width: 30px;
       }
 
       main {
         width: calc(100% - 20px);
-        margin-top: -44px;
-        padding: 28px 16px;
+
+        margin-top: -42px;
+
+        padding:
+          28px
+          16px
+          32px;
+
         border-radius: 18px;
       }
 
+      .intro {
+        margin-bottom: 28px;
+      }
+
+      .intro-label {
+        gap: 9px;
+        font-size: 11px;
+      }
+
+      .intro-label::before,
+      .intro-label::after {
+        width: 25px;
+      }
+
+      .intro h2 {
+        font-size: 26px;
+      }
+
       .intro p {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .intro p br {
+        display: none;
       }
 
       .works {
-        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
 
       .works a {
-        min-height: 84px;
+        min-height: 82px;
+
+        padding-right: 20px;
+
         font-size: 18px;
+
         border-top-width: 4px;
         border-radius: 12px;
       }
+
+      .works a::after {
+        right: 10px;
+        font-size: 24px;
+      }
+
+      footer {
+        padding:
+          23px
+          12px
+          25px;
+      }
+
+      .footer-title {
+        gap: 8px;
+        font-size: 13px;
+      }
+
+      .footer-title::before,
+      .footer-title::after {
+        width: 24px;
+      }
     }
 
-    @media (max-width: 380px) {
+    /*
+      画面幅が360px以下の場合
+    */
+
+    @media (max-width: 360px) {
       .works {
         grid-template-columns: 1fr;
+      }
+
+      .works a {
+        min-height: 72px;
       }
     }
   </style>
@@ -247,47 +590,66 @@
 
   <header class="hero">
     <div class="hero-inner">
+
+      <p class="year">
+        令和8年度
+      </p>
+
       <h1>
-        <span>令和8年度</span>
         Webサイト作品集
       </h1>
 
-      <p class="subject">ネットワーク活用</p>
+      <p class="subject">
+        ネットワーク活用
+      </p>
+
     </div>
   </header>
 
   <main>
-    <section class="intro">
-      <span class="intro-label">STUDENT WEB GALLERY</span>
 
-      <h2>作品を選んでください</h2>
+    <section class="intro">
+
+      <div class="intro-label">
+        STUDENT WEB GALLERY
+      </div>
+
+      <h2>
+        作品を選んでください
+      </h2>
 
       <p>
         生徒一人ひとりが制作したWebサイトを公開しています。<br>
         各ボタンをクリックして、作品をご覧ください。
       </p>
+
     </section>
 
-    <nav class="works" aria-label="生徒作品一覧">
+    <nav
+      class="works"
+      aria-label="生徒作品一覧"
+    >
+
       <a href="01/">作品01</a>
       <a href="02/">作品02</a>
       <a href="03/">作品03</a>
       <a href="04/">作品04</a>
-      <a href="05/">作品05</a>
 
+      <a href="05/">作品05</a>
       <a href="06/">作品06</a>
       <a href="07/">作品07</a>
       <a href="08/">作品08</a>
+
       <a href="09/">作品09</a>
       <a href="10/">作品10</a>
-
       <a href="11/">作品11</a>
       <a href="12/">作品12</a>
+
       <a href="13/">作品13</a>
       <a href="14/">作品14</a>
       <a href="15/">作品15</a>
-
       <a href="16/">作品16</a>
+
       <a href="17/">作品17</a>
       <a href="18/">作品18</a>
       <a href="19/">作品19</a>
@@ -298,11 +660,21 @@
       <a href="23/">作品23</a>
       <a href="24/">作品24</a>
       <a href="25/">TSUCHIDA</a>
+
     </nav>
+
   </main>
 
   <footer>
-    令和8年度　ネットワーク活用
+
+    <p class="footer-title">
+      令和8年度　ネットワーク活用
+    </p>
+
+    <p class="copyright">
+      © 2026 Webサイト作品集
+    </p>
+
   </footer>
 
 </body>
