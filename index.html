@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>令和8年度 Webサイト作品集</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #25324a;
+      background:
+        linear-gradient(135deg, #edf5ff 0%, #f8fbff 50%, #eef8f5 100%);
+      font-family:
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        Meiryo,
+        sans-serif;
+    }
+
+    header {
+      padding: 55px 20px 90px;
+      color: #ffffff;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #073b6f, #176ba9);
+    }
+
+    header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: 0.08em;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      opacity: 0.9;
+    }
+
+    main {
+      width: min(1200px, calc(100% - 32px));
+      margin: -52px auto 50px;
+      padding: 42px;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 58, 95, 0.16);
+    }
+
+    .introduction {
+      margin-bottom: 34px;
+      text-align: center;
+    }
+
+    .introduction h2 {
+      margin: 0 0 10px;
+      color: #063b6f;
+      font-size: 30px;
+      letter-spacing: 0.05em;
+    }
+
+    .introduction p {
+      margin: 0;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 18px;
+    }
+
+    .works a {
+      display: flex;
+      min-height: 110px;
+      align-items: center;
+      justify-content: center;
+      color: #064b85;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      background:
+        linear-gradient(145deg, #ffffff, #f1f7fd);
+      border: 1px solid #d4e3f0;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(22, 73, 115, 0.09);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .works a:hover {
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, #0c5795, #1683ba);
+      box-shadow: 0 11px 24px rgba(16, 88, 145, 0.26);
+      transform: translateY(-5px);
+    }
+
+    .works a:focus-visible {
+      outline: 4px solid rgba(22, 131, 186, 0.35);
+      outline-offset: 3px;
+    }
+
+    footer {
+      padding: 0 20px 35px;
+      color: #64748b;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 40px 16px 72px;
+      }
+
+      header p {
+        font-size: 15px;
+      }
+
+      main {
+        width: min(100% - 20px, 1200px);
+        margin-top: -38px;
+        padding: 28px 18px;
+        border-radius: 16px;
+      }
+
+      .introduction h2 {
+        font-size: 24px;
+      }
+
+      .introduction p {
+        font-size: 15px;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .works a {
+        min-height: 82px;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .works {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Webサイト作品集</h1>
+    <p>令和8年度　生徒作品ギャラリー</p>
+  </header>
+
+  <main>
+    <section class="introduction">
+      <h2>作品を選んでください</h2>
+      <p>
+        それぞれのボタンから、生徒が制作したWebサイトをご覧いただけます。
+      </p>
+    </section>
+
+    <nav class="works" aria-label="生徒作品一覧">
+      <a href="01/index.html">作品01</a>
+      <a href="02/index.html">作品02</a>
+      <a href="03/index.html">作品03</a>
+      <a href="04/index.html">作品04</a>
+      <a href="05/index.html">作品05</a>
+      <a href="06/index.html">作品06</a>
+      <a href="07/index.html">作品07</a>
+      <a href="08/index.html">作品08</a>
+      <a href="09/index.html">作品09</a>
+      <a href="10/index.html">作品10</a>
+      <a href="11/index.html">作品11</a>
+      <a href="12/index.html">作品12</a>
+      <a href="13/index.html">作品13</a>
+      <a href="14/index.html">作品14</a>
+      <a href="15/index.html">作品15</a>
+      <a href="16/index.html">作品16</a>
+      <a href="17/index.html">作品17</a>
+      <a href="18/index.html">作品18</a>
+      <a href="19/index.html">作品19</a>
+      <a href="20/index.html">作品20</a>
+      <a href="21/index.html">作品21</a>
+      <a href="22/index.html">作品22</a>
+      <a href="23/index.html">作品23</a>
+      <a href="24/index.html">作品24</a>
+      <a href="25/index.html">作品25</a>
+    </nav>
+  </main>
+
+  <footer>
+    © 2026 Webサイト作品集
+  </footer>
+
+</body>
+</html>
