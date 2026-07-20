@@ -1,97 +1,278 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>令和8年度 Webサイト作品集</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 40px;
-            background: #f5f5f5;
-        }
+  <title>令和8年度 Webサイト作品集</title>
 
-        h1 {
-            color: #003366;
-            border-bottom: 3px solid #003366;
-            padding-bottom: 10px;
-        }
+  <style>
+    :root {
+      --navy: #123f68;
+      --blue: #2f6f9f;
+      --light-blue: #eaf2f8;
+      --border: #c8d9e6;
+      --text: #25384a;
+      --subtext: #647789;
+      --white: #ffffff;
+    }
 
-        p {
-            font-size: 18px;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        ul {
-            display: grid;
-            grid-template-columns: repeat(4, 140px);
-            gap: 14px;
-            list-style: none;
-            padding: 0;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        linear-gradient(135deg, #eef4f8 0%, #f8fafc 55%, #edf3f6 100%);
+      font-family:
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        Meiryo,
+        sans-serif;
+    }
 
-        a {
-            display: block;
-            padding: 14px 10px;
-            text-align: center;
-            text-decoration: none;
-            background: #ffffff;
-            border: 1px solid #cccccc;
-            border-radius: 6px;
-            color: #003366;
-            font-size: 18px;
-        }
+    .hero {
+      padding: 52px 20px 105px;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(135deg, #123b60 0%, #286892 100%);
+    }
 
-        a:hover {
-            background: #003366;
-            color: #ffffff;
-        }
+    .hero-inner {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
 
-        @media screen and (max-width: 700px) {
-            body {
-                margin: 20px;
-            }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.2;
+      letter-spacing: 0.07em;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    }
 
-            ul {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    .hero h1 span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.42em;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      opacity: 0.9;
+    }
+
+    .subject {
+      margin: 20px 0 0;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: bold;
+      letter-spacing: 0.12em;
+    }
+
+    main {
+      width: min(1240px, calc(100% - 32px));
+      margin: -62px auto 50px;
+      padding: 44px;
+      background-color: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(31, 67, 94, 0.18);
+    }
+
+    .intro {
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: 0.05em;
+    }
+
+    .intro h2::after {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--blue);
+      border-radius: 999px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: var(--subtext);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .works a {
+      display: flex;
+      min-height: 108px;
+      align-items: center;
+      justify-content: center;
+      color: #174f79;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      background:
+        linear-gradient(145deg, #ffffff 0%, #eef5fa 100%);
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--blue);
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(34, 77, 108, 0.1);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .works a:hover {
+      color: var(--white);
+      background:
+        linear-gradient(135deg, #245f8b, #367dab);
+      box-shadow: 0 11px 23px rgba(30, 82, 120, 0.24);
+      transform: translateY(-5px);
+    }
+
+    .works a:focus-visible {
+      outline: 4px solid rgba(47, 111, 159, 0.3);
+      outline-offset: 4px;
+    }
+
+    footer {
+      padding: 0 20px 36px;
+      color: #607384;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1100px) {
+      .works {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 850px) {
+      main {
+        padding: 34px 26px;
+      }
+
+      .works {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding: 40px 16px 88px;
+      }
+
+      main {
+        width: calc(100% - 20px);
+        margin-top: -44px;
+        padding: 28px 16px;
+        border-radius: 18px;
+      }
+
+      .intro p {
+        font-size: 15px;
+      }
+
+      .works {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .works a {
+        min-height: 84px;
+        font-size: 18px;
+        border-top-width: 4px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .works {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>令和8年度 Webサイト作品集</h1>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>
+        <span>令和8年度</span>
+        Webサイト作品集
+      </h1>
 
-    <p>作品を選んでください。</p>
+      <p class="subject">ネットワーク活用</p>
+    </div>
+  </header>
 
-    <ul>
-        <li><a href="01/">作品01</a></li>
-        <li><a href="02/">作品02</a></li>
-        <li><a href="03/">作品03</a></li>
-        <li><a href="04/">作品04</a></li>
-        <li><a href="05/">作品05</a></li>
-        <li><a href="06/">作品06</a></li>
-        <li><a href="07/">作品07</a></li>
-        <li><a href="08/">作品08</a></li>
-        <li><a href="09/">作品09</a></li>
-        <li><a href="10/">作品10</a></li>
-        <li><a href="11/">作品11</a></li>
-        <li><a href="12/">作品12</a></li>
-        <li><a href="13/">作品13</a></li>
-        <li><a href="14/">作品14</a></li>
-        <li><a href="15/">作品15</a></li>
-        <li><a href="16/">作品16</a></li>
-        <li><a href="17/">作品17</a></li>
-        <li><a href="18/">作品18</a></li>
-        <li><a href="19/">作品19</a></li>
-        <li><a href="20/">作品20</a></li>
-        <li><a href="21/">作品21</a></li>
-        <li><a href="22/">作品22</a></li>
-        <li><a href="23/">作品23</a></li>
-        <li><a href="24/">作品24</a></li>
-        <li><a href="25/">作品25</a></li>
-    </ul>
+  <main>
+    <section class="intro">
+      <h2>作品を選んでください</h2>
+
+      <p>
+        生徒一人ひとりが制作したWebサイトを公開しています。<br>
+        各ボタンをクリックして、作品をご覧ください。
+      </p>
+    </section>
+
+    <nav class="works" aria-label="生徒作品一覧">
+      <a href="01/">作品01</a>
+      <a href="02/">作品02</a>
+      <a href="03/">作品03</a>
+      <a href="04/">作品04</a>
+      <a href="05/">作品05</a>
+
+      <a href="06/">作品06</a>
+      <a href="07/">作品07</a>
+      <a href="08/">作品08</a>
+      <a href="09/">作品09</a>
+      <a href="10/">作品10</a>
+
+      <a href="11/">作品11</a>
+      <a href="12/">作品12</a>
+      <a href="13/">作品13</a>
+      <a href="14/">作品14</a>
+      <a href="15/">作品15</a>
+
+      <a href="16/">作品16</a>
+      <a href="17/">作品17</a>
+      <a href="18/">作品18</a>
+      <a href="19/">作品19</a>
+      <a href="20/">作品20</a>
+
+      <a href="21/">作品21</a>
+      <a href="22/">作品22</a>
+      <a href="23/">作品23</a>
+      <a href="24/">作品24</a>
+      <a href="25/">TSUCHIDA</a>
+    </nav>
+  </main>
+
+  <footer>
+    令和8年度　ネットワーク活用
+  </footer>
 
 </body>
+
 </html>
